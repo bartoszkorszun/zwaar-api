@@ -1,14 +1,13 @@
 package com.bartoszkorszun.zwaarapi.entity;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 class UserTest {
 
     private static User user;
-
     @BeforeAll
     static void setUp() {
         user = new User.Builder(
@@ -23,6 +22,7 @@ class UserTest {
     }
 
     @Test
+    @DisplayName("Test created user")
     void testCreatedUser() {
         assertEquals("Bartosz", user.getName());
         assertEquals("bartoszkorszun@gmail.com", user.getEmail());
@@ -34,6 +34,7 @@ class UserTest {
     }
 
     @Test
+    @DisplayName("Test change user")
     void testChangeUser() {
         user.setName("Klaudia");
         user.setEmail("klaud@gmail.com");

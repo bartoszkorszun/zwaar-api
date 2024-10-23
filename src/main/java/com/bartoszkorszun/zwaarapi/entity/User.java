@@ -1,12 +1,26 @@
 package com.bartoszkorszun.zwaarapi.entity;
 
-public class User {
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "user")
+public final class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "email")
     private String email;
+    @Column(name = "password")
     private String password;
+    @Column(name = "height")
     private int height;
+    @Column(name = "weight")
     private double weight;
+    @Column(name = "bmi")
+    private double bmi;
+    @Column(name = "notifications")
     private boolean notifications;
 
     public static class Builder {
@@ -102,5 +116,10 @@ public class User {
 
     public boolean isNotifications() {
         return notifications;
+    }
+
+    // Required by JPA
+    @Deprecated
+    protected User() {
     }
 }

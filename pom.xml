@@ -21,7 +21,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>20</maven.compiler.target>
         <maven.compiler.source>20</maven.compiler.source>
-        <junit.version>5.11.0-M2</junit.version>
+        <junit.version>5.9.3</junit.version>
     </properties>
 
     <dependencies>
